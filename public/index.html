@@ -1,1 +1,164 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OwnBlox API - Fast & Reliable</title><meta name="description" content="Dokumentasi lengkap API dari OwnBlox. Cepat, aman, dan terpercaya. Coba berbagai endpoint sekarang!"><meta name="robots" content="index, follow"><meta property="og:title" content="OwnBlox API - Fast & Reliable"><meta property="og:description" content="Dokumentasi lengkap API dari OwnBlox. Cepat, aman, dan terpercaya!"><meta property="og:image" content="https://files.catbox.moe/2ybrj7.jpg"><meta property="og:url" content="https://api.ownblox.my.id"><meta property="og:type" content="website"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"OwnBlox API","url":"https://api.ownblox.my.id","description":"Dokumentasi lengkap dan realtime dari OwnBlox API. Aman, cepat, dan terpercaya.","publisher":{"@type":"Organization","name":"OwnBlox"}}</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link rel="stylesheet" href="styles.css"><link rel="icon" href="https://files.catbox.moe/2ybrj7.jpg" type="image/jpeg"></head><body><div class="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><div class="loading-text">Loading OwnBlox API...</div></div></div><div class="menu-btn"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="category-panel"><div class="panel-header"><h3>Kategori API</h3><span class="close-btn">×</span></div><div class="category-list"></div></div><div class="changelog-popup" id="changelogPopup"><div class="popup-content"><div class="popup-header"><h3>Update Terbaru</h3><span class="close-popup">&times;</span></div><div class="popup-body" id="changelogList"></div><div class="popup-footer"><button id="markAsRead">Tandai Sudah Dibaca</button></div></div></div><div class="container"><h1>API List</h1><div class="search-container"><input type="text" id="search-input" placeholder="Cari endpoint..."><i class="fas fa-search"></i></div><div class="changelog-btn-container"><button id="showChangelog" class="changelog-btn"><i class="fas fa-bell"></i> Lihat Update<span class="notification-badge">3</span></button></div><div class="welcome-section"><h2>Selamat Datang di OwnBlox API</h2><p>List endpoint API yang lengkap yang bisa kamu gunakan.</p></div><div class="statistics"><div class="stat-item"><i class="fas fa-network-wired"></i><span id="total-endpoints">0</span><p>Endpoints</p></div><div class="stat-item"><i class="fas fa-check-circle"></i><span id="online-endpoints">0</span><p>Online</p></div><div class="stat-item"><i class="fas fa-times-circle"></i><span id="offline-endpoints">0</span><p>Offline</p></div></div><div id="api-categories"></div><footer><div class="footer-content"><div class="copyright">© 2025 API OwnBlox – Fast & Reliable API Services.</div><div class="social-links"><a href="https://github.com/Kwkwkwjwowj" target="_blank" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a><a href="https://whatsapp.com/channel/0029Vafs40K4dTnIXMqfQa2Q" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i><span>WhatsApp Channel</span></a></div></div></footer></div><div class="api-modal" id="apiModal"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">API Tester</h3><span class="close-modal">×</span></div><div class="modal-body"><div class="tester-controls"><select class="tester-method"><option value="GET">GET</option></select><input type="text" class="tester-url" placeholder="API Endpoint..."><button class="send-btn"><i class="fas fa-paper-plane"></i> Send Request</button></div><div class="params-container"></div><div class="response-container"><div class="response-meta"><div class="response-status"></div><div class="response-time"></div></div><div class="response-output"><div class="loading-indicator"><div class="loading-spinner"></div><span class="loading-text">Memproses permintaan...</span></div><div class="response-content"></div></div></div></div></div></div><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiori APIs - Fast & Flexible</title>
+  <meta name="description" content="Dokumentasi lengkap Shiori APIs. Cepat, aman, dan fleksibel untuk berbagai kebutuhan pengembangan.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Shiori APIs - Fast & Flexible">
+  <meta property="og:description" content="API publik yang lengkap dan dapat diandalkan oleh para developer.">
+  <meta property="og:image" content="https://files.catbox.moe/2ybrj7.jpg">
+  <meta property="og:url" content="https://api.shiori.dev">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Shiori APIs",
+      "url": "https://api.shiori.dev",
+      "description": "Dokumentasi API oleh Shiori. Aman, fleksibel, dan cepat.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Shiori"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://files.catbox.moe/2ybrj7.jpg" type="image/jpeg">
+</head>
+<body>
+
+<div class="loading-screen">
+  <div class="loading-content">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Memuat Shiori APIs...</div>
+  </div>
+</div>
+
+<div class="menu-btn">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<div class="category-panel">
+  <div class="panel-header">
+    <h3>Kategori API</h3>
+    <span class="close-btn">×</span>
+  </div>
+  <div class="category-list"></div>
+</div>
+
+<div class="changelog-popup" id="changelogPopup">
+  <div class="popup-content">
+    <div class="popup-header">
+      <h3>Update Terbaru</h3>
+      <span class="close-popup">&times;</span>
+    </div>
+    <div class="popup-body" id="changelogList"></div>
+    <div class="popup-footer">
+      <button id="markAsRead">Tandai Sudah Dibaca</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Daftar Endpoint</h1>
+
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Cari endpoint...">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <div class="changelog-btn-container">
+    <button id="showChangelog" class="changelog-btn">
+      <i class="fas fa-bell"></i> Lihat Update
+      <span class="notification-badge">3</span>
+    </button>
+  </div>
+
+  <div class="welcome-section">
+    <h2>Selamat Datang di Shiori APIs</h2>
+    <p>Jelajahi berbagai endpoint publik yang siap digunakan untuk berbagai kebutuhan aplikasi kamu.</p>
+  </div>
+
+  <div class="statistics">
+    <div class="stat-item">
+      <i class="fas fa-network-wired"></i>
+      <span id="total-endpoints">0</span>
+      <p>Total Endpoint</p>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-check-circle"></i>
+      <span id="online-endpoints">0</span>
+      <p>Online</p>
+    </div>
+    <div class="stat-item">
+      <i class="fas fa-times-circle"></i>
+      <span id="offline-endpoints">0</span>
+      <p>Offline</p>
+    </div>
+  </div>
+
+  <div id="api-categories"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="copyright">© 2025 Shiori APIs – Powered by Shiori Developer Network.</div>
+      <div class="social-links">
+        <a href="https://github.com/shiori-dev" target="_blank" class="social-link">
+          <i class="fab fa-github"></i><span>GitHub</span>
+        </a>
+        <a href="https://whatsapp.com/channel/shioriapis" target="_blank" class="social-link">
+          <i class="fab fa-whatsapp"></i><span>WhatsApp Channel</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="api-modal" id="apiModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="modalTitle">API Tester</h3>
+      <span class="close-modal">×</span>
+    </div>
+    <div class="modal-body">
+      <div class="tester-controls">
+        <select class="tester-method">
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+        </select>
+        <input type="text" class="tester-url" placeholder="https://api.shiori.dev/endpoint">
+        <button class="send-btn">
+          <i class="fas fa-paper-plane"></i> Kirim Permintaan
+        </button>
+      </div>
+      <div class="params-container"></div>
+      <div class="response-container">
+        <div class="response-meta">
+          <div class="response-status"></div>
+          <div class="response-time"></div>
+        </div>
+        <div class="response-output">
+          <div class="loading-indicator">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Memproses permintaan...</span>
+          </div>
+          <div class="response-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
