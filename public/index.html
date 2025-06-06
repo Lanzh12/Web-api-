@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shiori APIs - Fast & Flexible</title>
-  <meta name="description" content="Dokumentasi lengkap Shiori APIs. Cepat, aman, dan fleksibel untuk berbagai kebutuhan pengembangan.">
+  <title>Shiori APIs - Cepat & Fleksibel</title>
+  <meta name="description" content="Dokumentasi lengkap Shiori APIs. Cepat, aman, dan fleksibel untuk berbagai kebutuhan pengembangan Anda.">
   <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Shiori APIs - Fast & Flexible">
+  <link rel="icon" href="https://files.catbox.moe/2ybrj7.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="https://files.catbox.moe/2ybrj7.jpg"> <link rel="manifest" href="/manifest.json"> <meta property="og:title" content="Shiori APIs - Cepat & Fleksibel">
   <meta property="og:description" content="API publik yang lengkap dan dapat diandalkan oleh para developer.">
   <meta property="og:image" content="https://files.catbox.moe/2ybrj7.jpg">
-  <meta property="og:url" content="https://api.shiori.dev">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://web-api-vert.vercel.app"> <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
 
   <script type="application/ld+json">
     {
@@ -19,17 +20,21 @@
       "@type": "WebSite",
       "name": "Shiori APIs",
       "url": "https://web-api-vert.vercel.app",
-      "description": "Dokumentasi API oleh Shiori. Aman, fleksibel, dan cepat.",
+      "description": "Dokumentasi API oleh Shiori. Cepat, aman, dan fleksibel.",
       "publisher": {
         "@type": "Organization",
-        "name": "Shiori"
+        "name": "Shiori Developer Network"
       }
     }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="https://files.catbox.moe/2ybrj7.jpg" type="image/jpeg">
 </head>
 <body>
 
@@ -40,125 +45,219 @@
   </div>
 </div>
 
-<div class="menu-btn">
+<button class="menu-btn" aria-label="Toggle navigation menu">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
-</div>
+</button>
 
-<div class="category-panel">
+<aside class="category-panel">
   <div class="panel-header">
     <h3>Kategori API</h3>
-    <span class="close-btn">×</span>
+    <button class="close-btn" aria-label="Close category panel">×</button>
   </div>
-  <div class="category-list"></div>
+  <nav class="category-list" aria-label="API Categories"></nav>
+</aside>
+
+<div class="theme-switch-container">
+  <label class="theme-switch" aria-label="Toggle dark mode">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider">
+      <i class="fas fa-sun icon sun-icon"></i>
+      <i class="fas fa-moon icon moon-icon"></i>
+    </span>
+  </label>
 </div>
 
-<div class="changelog-popup" id="changelogPopup">
+<div class="changelog-popup" id="changelogPopup" role="dialog" aria-modal="true" aria-labelledby="popupHeader">
   <div class="popup-content">
     <div class="popup-header">
-      <h3>Update Terbaru</h3>
-      <span class="close-popup">&times;</span>
+      <h3 id="popupHeader">Update Terbaru</h3>
+      <button class="close-popup" aria-label="Tutup pop-up update">&times;</button>
     </div>
-    <div class="popup-body" id="changelogList"></div>
+    <div class="popup-body" id="changelogList">
+      <div class="changelog-item">
+        <div class="changelog-date">6 Juni 2025</div>
+        <ul class="changelog-updates">
+          <li>Memperbarui desain UI/UX menjadi lebih modern dan lembut.</li>
+          <li>Menambahkan fitur Dark/Light Mode.</li>
+          <li>Meningkatkan animasi dan transisi di seluruh halaman.</li>
+          <li>Memperbaiki optimasi SEO dan performa.</li>
+          <li>Menambahkan struktur HTML semantik untuk aksesibilitas yang lebih baik.</li>
+        </ul>
+      </div>
+       <div class="changelog-item">
+        <div class="changelog-date">10 Mei 2025</div>
+        <ul class="changelog-updates">
+          <li>Penambahan endpoint API baru untuk data cuaca real-time.</li>
+          <li>Peningkatan kecepatan respons untuk endpoint gambar.</li>
+          <li>Perbaikan bug minor pada tester API.</li>
+        </ul>
+      </div>
+    </div>
     <div class="popup-footer">
       <button id="markAsRead">Tandai Sudah Dibaca</button>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <h1>Daftar Endpoint</h1>
+<main class="container">
+  <h1>Daftar Endpoint API Shiori</h1>
 
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Cari endpoint...">
-    <i class="fas fa-search"></i>
-  </div>
+  <section class="search-container">
+    <input type="text" id="search-input" placeholder="Cari endpoint API..." aria-label="Cari endpoint API">
+    <i class="fas fa-search" aria-hidden="true"></i>
+  </section>
 
-  <div class="changelog-btn-container">
+  <section class="changelog-btn-container">
     <button id="showChangelog" class="changelog-btn">
-      <i class="fas fa-bell"></i> Lihat Update
-      <span class="notification-badge">999</span>
+      <i class="fas fa-bell" aria-hidden="true"></i> Lihat Update
+      <span class="notification-badge" aria-live="polite" aria-atomic="true">999</span>
     </button>
-  </div>
+  </section>
 
-  <div class="welcome-section">
+  <section class="welcome-section">
     <h2>Selamat Datang di Shiori APIs</h2>
-    <p>Jelajahi berbagai endpoint publik yang siap digunakan untuk berbagai kebutuhan aplikasi kamu.</p>
-  </div>
+    <p>Jelajahi berbagai endpoint publik yang cepat, aman, dan fleksibel, siap digunakan untuk berbagai kebutuhan aplikasi kamu. Kami berkomitmen menyediakan API berkualitas tinggi untuk para developer.</p>
+  </section>
 
-  <div class="statistics">
+  <section class="statistics">
     <div class="stat-item">
-      <i class="fas fa-network-wired"></i>
+      <i class="fas fa-network-wired" aria-hidden="true"></i>
       <span id="total-endpoints">0</span>
       <p>Total Endpoint</p>
     </div>
     <div class="stat-item">
-      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-check-circle" aria-hidden="true"></i>
       <span id="online-endpoints">0</span>
       <p>Online</p>
     </div>
     <div class="stat-item">
-      <i class="fas fa-times-circle"></i>
+      <i class="fas fa-times-circle" aria-hidden="true"></i>
       <span id="offline-endpoints">0</span>
       <p>Offline</p>
     </div>
-  </div>
+  </section>
 
-  <div id="api-categories"></div>
+  <section id="api-categories" aria-live="polite"></section>
 
   <footer>
     <div class="footer-content">
-      <div class="copyright">© 2025 Shiori APIs – Powered by Shiori Developer Network.</div>
+      <div class="copyright">
+        &copy; <span id="current-year"></span> Shiori APIs – Diberdayakan oleh Shiori Developer Network.
+      </div>
       <div class="social-links">
-        <a href="https://github.com/lanzh12" target="_blank" class="social-link">
-          <i class="fab fa-github"></i><span>GitHub</span>
+        <a href="https://github.com/lanzh12" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
         </a>
-        <a href="https://whatsapp.com/channel/shioriapis" target="_blank" class="social-link">
-          <i class="fab fa-whatsapp"></i><span>WhatsApp Channel</span>
+        <a href="https://whatsapp.com/channel/shioriapis" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp Channel</span>
         </a>
       </div>
     </div>
   </footer>
-</div>
+</main>
 
-<div class="api-modal" id="apiModal">
+<div class="api-modal" id="apiModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-content">
     <div class="modal-header">
       <h3 id="modalTitle">API Tester</h3>
-      <span class="close-modal">×</span>
+      <button class="close-modal" aria-label="Tutup tester API">&times;</button>
     </div>
     <div class="modal-body">
       <div class="tester-controls">
-        <select class="tester-method">
+        <label for="testerMethod" class="sr-only">Metode HTTP</label>
+        <select class="tester-method" id="testerMethod">
           <option value="GET">GET</option>
           <option value="POST">POST</option>
           <option value="PUT">PUT</option>
           <option value="DELETE">DELETE</option>
         </select>
-        <input type="text" class="tester-url" placeholder="https://api.shiori.dev/endpoint">
-        <button class="send-btn">
-          <i class="fas fa-paper-plane"></i> Kirim Permintaan
+        <label for="testerUrl" class="sr-only">URL Endpoint</label>
+        <input type="text" class="tester-url" id="testerUrl" placeholder="https://api.shiori.dev/endpoint" aria-required="true">
+        <button class="send-btn" aria-label="Kirim permintaan API">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Permintaan
         </button>
       </div>
-      <div class="params-container"></div>
+      <div class="params-container">
+        </div>
       <div class="response-container">
         <div class="response-meta">
-          <div class="response-status"></div>
+          <div class="response-status" aria-live="polite"></div>
           <div class="response-time"></div>
         </div>
         <div class="response-output">
-          <div class="loading-indicator">
+          <div class="loading-indicator" style="display: none;">
             <div class="loading-spinner"></div>
             <span class="loading-text">Memproses permintaan...</span>
           </div>
-          <div class="response-content"></div>
+          <div class="response-content">
+            <p style="text-align: center; color: var(--text-color); opacity: 0.7;">Hasil respons API akan muncul di sini.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+<script>
+  // Dynamically set current year in footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
+  // Dark/Light Mode Toggle Logic
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+  // Check for saved theme preference or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-theme');
+      themeToggle.checked = true;
+    }
+  } else if (prefersDark) {
+    body.classList.add('dark-theme');
+    themeToggle.checked = true;
+  }
+
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+  // Basic Changelog Item Injection (for demonstration, ideally from JS)
+  // You might want to remove this if your script.js already handles changelog dynamically
+  // const changelogList = document.getElementById('changelogList');
+  // if (!changelogList.innerHTML.trim()) { // Only add if not already filled by JS
+  //   changelogList.innerHTML = `
+  //     <div class="changelog-item">
+  //       <div class="changelog-date">6 Juni 2025</div>
+  //       <ul class="changelog-updates">
+  //         <li>Memperbarui desain UI/UX menjadi lebih modern dan lembut.</li>
+  //         <li>Menambahkan fitur Dark/Light Mode.</li>
+  //         <li>Meningkatkan animasi dan transisi di seluruh halaman.</li>
+  //         <li>Memperbaiki optimasi SEO dan performa.</li>
+  //         <li>Menambahkan struktur HTML semantik untuk aksesibilitas yang lebih baik.</li>
+  //       </ul>
+  //     </div>
+  //      <div class="changelog-item">
+  //       <div class="changelog-date">10 Mei 2025</div>
+  //       <ul class="changelog-updates">
+  //         <li>Penambahan endpoint API baru untuk data cuaca real-time.</li>
+  //         <li>Peningkatan kecepatan respons untuk endpoint gambar.</li>
+  //         <li>Perbaikan bug minor pada tester API.</li>
+  //       </ul>
+  //     </div>
+  //   `;
+  // }
+</script>
 </body>
-  </html>
+</html>
