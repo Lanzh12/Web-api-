@@ -12,6 +12,18 @@ const apiData = {
             ]
         },
         {
+    method: "POST",
+    title: "AI Image Upscale",
+    status: "online",
+    description: "Meningkatkan resolusi gambar dengan AI (skala 2x-10x) dan opsi perbaikan wajah.",
+    endpoint: "/api/upscale",
+    parameters: [
+        {name: "image", type: "file", placeholder: "Upload gambar (jpg/png)"},
+        {name: "scale", type: "number", placeholder: "Skala (2-10, default 2)"},
+        {name: "faceEnhance", type: "text", placeholder: "true/false (default: true)"}
+    ]
+        }
+        {
             method: "GET",
             title: "Twitter Downloader",
             status: "online",
